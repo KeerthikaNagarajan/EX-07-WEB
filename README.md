@@ -1,7 +1,21 @@
-# Carousel
-## PROGRAM:
-### SliderImage.js
-```
+# Ex-07:
+## Image Carousel in react using hooks
+### AIM:
+The aim of this code is to create an image carousel using React hooks. The carousel displays a set of images with corresponding titles and descriptions. Users can navigate through the images using arrow buttons and dots indicators.
+### ALGORITHM:
+1. Create an array of objects called "SliderImage", where each object represents an image slide with properties like title, description, and URL of the image.
+2. Create separate components for the arrows, dots, and the main slider content.
+3. In the Slider component, initialize the activeIndex state variable using the useState hook to track the currently displayed slide.
+4. Use the useEffect hook to set up an interval that automatically updates the activeIndex to the next slide after a certain duration.
+5. Implement functions for the previous and next slide actions, updating the activeIndex accordingly.
+6. Render the UI elements using JSX:
+* Wrap the slider content, arrows, and dots components inside a container.
+* Pass the activeIndex and the SliderImage array as props to the slider content, dots, and arrows components.
+*Attach event handlers to the arrow buttons and dots indicators to update the activeIndex.
+7. Apply CSS styles to achieve the desired layout and appearance of the carousel.
+### PROGRAM:
+### SliderImage.js:
+```javascript
 import first from "../assets/first.jpg";
 import second from "../assets/second.jpg";
 import third from "../assets/third.jpg";
@@ -25,7 +39,7 @@ export default[
 ];
 ```
 ### Arrows.js
-```
+```javascript
 import React from "react";
 
 function Arrows({prevSlide, nextSlide}){
@@ -44,7 +58,7 @@ function Arrows({prevSlide, nextSlide}){
 export default Arrows;
 ```
 ### Dots.js
-```
+```javascript
 import React from "react";
 
 function Dots ({activeIndex, onClicks, sliderImage}){
@@ -64,7 +78,7 @@ function Dots ({activeIndex, onClicks, sliderImage}){
 export default Dots;
 ```
 ### SliderContent.js
-```
+```javascript
 import React from "react";
 
 function SliderContent ({ activeIndex, sliderImage}){
@@ -86,7 +100,7 @@ function SliderContent ({ activeIndex, sliderImage}){
 export default SliderContent;
 ```
 ### Slider.js
-```
+```javascript
 import React, {useEffect, useState} from "react";
 import SliderContent from "./SliderContent";
 import Dots from "./Dots";
@@ -128,7 +142,7 @@ function Slider(props){
 export default Slider;
 ```
 ### slider.css
-```
+```css
 * {
     box-sizing: border-box;
     margin: 0;
@@ -257,7 +271,7 @@ export default Slider;
   }
 ```
 ### App.js
-```
+```javascript
 import Slider from "./components/Slider";
 
 function App() {
@@ -277,3 +291,5 @@ export default App;
 ### SLIDE 3:
 <img width="960" alt="3" src="https://github.com/KeerthikaNagarajan/react-carousel/assets/93427089/5c09d102-e7bb-47c4-8007-cf6a65b8c3bb">
 
+### RESULT:
+The code will generate an image carousel with a set of slides.
